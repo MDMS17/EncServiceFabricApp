@@ -1,0 +1,42 @@
+﻿@model ExportFilesModel
+@{
+    ViewData["Title"] = "Generate MCPD Json Files";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h1>Generate MCPD Json Files</h1>
+    <form asp-action="GenerateMCPDJson">
+        <p>
+            <label>Destination Folder:</label>
+            <input asp-for="@Model.sourcePath" type="text" size="60" readonly="readonly" />
+        </p>
+        <p></p>
+        <p>
+            <label>Total Grievances:</label>
+            <input type="text" size="60" value="@Model.totalDatabaseRecords.Split('~')[0]" readonly="readonly" />
+        </p>
+        <p>
+            <label>Total Appeals:</label>
+            <input type="text" size="60" value="@Model.totalDatabaseRecords.Split('~')[1]" readonly="readonly" />
+        </p>
+        <p>
+            <label>Total Continuity Of Care:</label>
+            <input type="text" size="60" value="@Model.totalDatabaseRecords.Split('~')[2]" readonly="readonly" />
+        </p>
+        <p>
+            <label>Total Out Of Network:</label>
+            <input type="text" size="60" value="@Model.totalDatabaseRecords.Split('~')[3]" readonly="readonly" />
+        </p>
+        <p>
+            Production / Test: <select asp-for="@Model.ProdTestFlag">
+                <option value="1">Production</option>
+                <option value="2">Test</option>
+            </select>
+        </p>
+        <p>
+            <input type="submit" value="Generate Files" class="btn btn-primary" />
+        </p>
+        <label>@Model.archivePath</label>
+        <input type="hidden" asp-for="@Model.goodDatabaseRecords" value="@Model.totalDatabaseRecords"/>
+    </form>
+</div>

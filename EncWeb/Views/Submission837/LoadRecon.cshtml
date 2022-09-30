@@ -1,0 +1,38 @@
+﻿@model LoadReconModel
+@{
+    ViewData["Title"] = "Load submitted 837 reconciliation records";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h1>Load submission 837 Reconciliation</h1>
+    <form asp-action="LoadRecon">
+        <p>
+            Submitted files need Recon loading:
+        </p>
+        <table style="width:100%;border:1px solid">
+            <tr>
+                <td>Days</td>
+                <td>Suibmitted file</td>
+            </tr>
+            @foreach (var item in Model.newFiles)
+            {
+                <tr>
+                    <td>@item.Item2</td>
+                    <td>@item.Item1</td>
+                </tr>
+            }
+        </table>
+        <p></p>
+        <p>
+            @if (Model.enableSubmit)
+            {
+                <input type="submit" value="Load Recon" class="btn btn-primary" />
+            }
+            else
+            {
+                <input type="submit" value="Load Recon" class="btn btn-primary" disabled="disabled" />
+            }
+        </p>
+        <label>@Model.displayMessage</label>
+    </form>
+</div>

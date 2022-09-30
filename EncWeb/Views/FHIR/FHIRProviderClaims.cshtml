@@ -1,0 +1,245 @@
+﻿@model FHIRClaimModel
+@{
+    ViewData["Title"] = "FHIR claims";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h1>FHIR Claims</h1>
+    @if (Model.claim != null)
+    {
+        <div class="table">
+            <div class="row">
+                <div class="col">
+                    Claim Id:@Model.claim.identifier[0].value
+                </div>
+                <div class="col">
+                    Claim Status:@Model.claim.status
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    Claim Type:@Model.claim.type.text
+                </div>
+                <div class="col">
+                    @if (Model.claim.subType != null)
+                    {
+                        <span>SubType:@Model.claim.subType.text</span>
+                    }
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    @if (Model.claim.use != null)
+                    {
+                        <span>Use:@Model.claim.use</span>
+                    }
+                </div>
+                <div class="col">
+                    Member:@Model.claim.patient.display
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    Period:@Model.claim.billablePeriod.start?.ToShortDateString()&nbsp;@Model.claim.billablePeriod.end?.ToShortDateString()
+                </div>
+                <div class="col">
+                    Created:@Model.claim.created.ToShortDateString()
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    @if (Model.claim.enterer != null)
+                    {
+                        <span>Entered:@Model.claim.enterer.display</span>
+                    }
+                </div>
+                <div class="col">
+                    @if (Model.claim.insurer != null)
+                    {
+                        <span>Insurer:@Model.claim.insurer.display</span>
+                    }
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    Provider:@Model.claim.provider.display
+                </div>
+                <div class="col">
+                    @if (Model.claim.priority != null)
+                    {
+                        <span>Priority:@Model.claim.priority.text</span>
+                    }
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    @if (Model.claim.fundsReserve != null)
+                    {
+                        <span>Funds Reserve:@Model.claim.fundsReserve.text</span>
+                    }
+                </div>
+                <div class="col">
+                    Related:<br />
+                    @if (Model.claim.related != null && Model.claim.related.Count > 0)
+                    {
+                        foreach (var relatedClaim in Model.claim.related)
+                        {
+                            <span>@relatedClaim.claim.display</span><br />
+                        }
+                    }
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    @if (Model.claim.prescription != null)
+                    {
+                        <span>Prescription:@Model.claim.prescription.display</span>
+                    }
+                </div>
+                <div class="col">
+                    @if (Model.claim.originalPrescription != null)
+                    {
+                        <span>Original PRescription:@Model.claim.originalPrescription.display</span>
+                    }
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    Payee:@Model.claim.payee.party.display
+                </div>
+                <div class="col">
+                    @if (Model.claim.referral != null)
+                    {
+                        <span>Referral:@Model.claim.referral.display</span>
+                    }
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    @if (Model.claim.facility != null)
+                    {
+                        <span>Facility:@Model.claim.facility.display</span>
+                    }
+                </div>
+                <div class="col">
+                    Care Team:<br />
+                    @if (Model.claim.careTeam != null && Model.claim.careTeam.Count > 0)
+                    {
+                        foreach (var careTeam in Model.claim.careTeam)
+                        {
+                            <span>@careTeam.provider.display</span><br />
+                        }
+                    }
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    Supporting Info:<br />
+                    @if (Model.claim.supportingInfo != null && Model.claim.supportingInfo.Count > 0)
+                    {
+                        foreach (var supportingInfo in Model.claim.supportingInfo)
+                        {
+                            <span>@supportingInfo.value.valueString</span><br />
+                        }
+                    }
+                </div>
+                <div class="col">
+                    Diagnosis:<br />
+                    @if (Model.claim.diagnosis != null && Model.claim.diagnosis.Count > 0)
+                    {
+                        foreach (var diagnosis in Model.claim.diagnosis)
+                        {
+                            <span>@diagnosis.diagnosis.diagnosisCodeableConcept.text</span><br />
+                        }
+                    }
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    Procedure:<br />
+                    @if (Model.claim.procedure != null && Model.claim.procedure.Count > 0)
+                    {
+                        foreach (var procedure in Model.claim.procedure)
+                        {
+                            <span>@procedure.procedure.procedureCodeableConcept.text</span>
+                            @if (procedure.udi != null && procedure.udi.Count > 0)
+                            {
+                                foreach (var udi in procedure.udi)
+                                {
+                                    <span>&nbsp;@udi.display</span>
+                                }
+                            }
+                            <br />
+                        }
+                    }
+                </div>
+                <div class="col">
+                    Insurance:<br />
+                    @if (Model.claim.insurance != null && Model.claim.insurance.Count > 0)
+                    {
+                        foreach (var insurance in Model.claim.insurance)
+                        {
+                            <span>@insurance.coverage.display</span><br />
+                        }
+                    }
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    Acccident<br />
+                    @if (Model.claim.accident != null)
+                    {
+                        <span>Date:@Model.claim.accident.date?.ToShortDateString()</span><br />
+                        <span>Type:@Model.claim.accident.type?.text</span><br />
+                        <span>Location:@Model.claim.accident.location?.locationAddress</span>
+                    }
+
+
+                </div>
+                <div class="col">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    @if (Model.claim.item != null && Model.claim.item.Count > 0)
+                    {
+                        foreach (var item in Model.claim.item)
+                        {
+                            <span>Service Line @item.sequence.ToString()</span><br />
+                            <span>Revenue:@item.revenue?.text</span><br />
+                            <span>Category:@item.category?.text</span><br />
+                            <span>Service:@item.productOrService?.text</span><br />
+                            @if (item.modifier != null && item.modifier.Count > 0)
+                            {
+                                <span>Modifier:</span>
+                                foreach (var modifier in item.modifier)
+                                {
+                                    <span>@modifier.text&nbsp;</span>
+                                }
+                                <br />
+                            }
+                            @if (item.programCode != null && item.programCode.Count > 0)
+                            {
+                                <span>Program Code:</span>
+                                foreach (var programCode in item.programCode)
+                                {
+                                    <span>@programCode.text&nbsp;</span>
+                                }
+                                <br />
+                            }
+                            <span>Service date:@item.serviced?.servicedDate?.ToShortDateString()</span><br />
+                            <span>Service Location:@item.location?.locationAddress</span><br />
+                            <span>Quantity:@item.quantity?.ToString()</span><br />
+                            <span>Unit Price:@item.unitPrice?.value.ToString()</span><br />
+                        }
+                    }
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    Total:@Model.claim.total.value.ToString()
+                </div>
+            </div>
+        </div>
+    }
+</div>

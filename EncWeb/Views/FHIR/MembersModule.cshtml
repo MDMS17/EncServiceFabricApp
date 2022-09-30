@@ -1,0 +1,103 @@
+﻿@model FHIRMemberModel
+@{
+    ViewData["Title"] = "FHIR Members Module";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h1>FHIR Members Module</h1>
+    <form asp-action="MembersModule">
+        <div style="@Model.ShowLogin">
+            <p>
+                <label>Member ID:</label>
+                <input asp-for="@Model.UserId" type="text" size="60" />
+            </p>
+            <p>
+                <label>Password:</label>
+                <input asp-for="@Model.Password" type="password" size="60" />
+            </p>
+            <p style="@Model.ShowVerification">
+                <label>Verification Code:</label>
+                <input asp-for="@Model.VerificationCode" type="text" size="60" />
+            </p>
+            <p>
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </p>
+        </div>
+        @if (Model.patient != null)
+        {
+            <div style="@Model.showMember" class="table">
+                <div class="row">
+                    <div class="col">
+                        Member Id:@Model.patient.identifier[0].value
+                    </div>
+                    <div class="col">
+                        Active:@Model.patient.active.ToString()
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        Name:@Model.patient.name[0].given[0] &nbsp; @Model.patient.name[0].family
+                    </div>
+                    @if (Model.patient.telecom != null)
+                    {
+                        <div class="col">
+                            Phone: @Model.patient.telecom[0].value
+                        </div>
+                    }
+                </div>
+                <div class="row">
+                    <div class="col">
+                        Gender:@Model.patient.gender
+                    </div>
+                    <div class="col">
+                        Brith Date:@Model.patient.birthDate?.ToShortDateString()
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        Address<br />
+                        Street:@Model.patient.address[0].line[0]<br/>
+                        City:@Model.patient.address[0].city<br />
+                        State:@Model.patient.address[0].state<br />
+                        Zip:@Model.patient.address[0].postalCode
+                    </div>
+                    @if (Model.patient.maritalStatus != null)
+                    {
+                        <div class="col">
+                            Marital Status:@Model.patient.maritalStatus.text
+                        </div>
+                    }
+                </div>
+                <div class="row">
+                    @if (Model.patient.contact != null)
+                    {
+                        <div class="col">
+                            Contact:@Model.patient.contact[0].name.given[0] &nbsp; @Model.patient.contact[0].name.family
+                        </div>
+                    }
+                    @if (Model.patient.communication != null)
+                    {
+                        <div class="col">
+                            Language:@Model.patient.communication[0].language
+                        </div>
+                    }
+                </div>
+                <div class="row">
+                    <div class="col">
+                        PCP:@Model.patient.generalPractitioner[0].display
+                    </div>
+                    @if (Model.patient.managingOrganization != null)
+                    {
+                        <div class="col">
+                            Managing Org:@Model.patient.managingOrganization.display
+                        </div>
+                    }
+                </div>
+            </div>
+            <div>
+                <button asp-action="FHIRClaims"  class="btn">View Claims</button>
+            </div>
+        }
+        <label>@Model.Message</label>
+    </form>
+</div>

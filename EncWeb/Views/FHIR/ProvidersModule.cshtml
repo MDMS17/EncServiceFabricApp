@@ -1,0 +1,104 @@
+﻿@model FHIRProviderModel
+@{
+    ViewData["Title"] = "FHIR Providers Module";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h1>FHIR Providers Module</h1>
+    <form asp-action="ProvidersModule">
+        <div style="@Model.ShowLogin">
+            <p>
+                <label>Provider ID:</label>
+                <input asp-for="@Model.UserId" type="text" size="60" />
+            </p>
+            <p>
+                <label>Password:</label>
+                <input asp-for="@Model.Password" type="password" size="60" />
+            </p>
+            <p style="@Model.ShowVerification">
+                <label>Verification Code:</label>
+                <input asp-for="@Model.VerificationCode" type="text" size="60" />
+            </p>
+            <p>
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </p>
+        </div>
+        @if (Model.practitioner != null)
+        {
+            <div style="@Model.showProvider" class="table">
+                <div class="row">
+                    <div class="col">
+                        Provider Id:@Model.practitioner.identifier[0].value
+                    </div>
+                    <div class="col">
+                        Active:@Model.practitioner.active.ToString()
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        Name:@Model.practitioner.name[0].family
+                        @if (Model.practitioner.name[0].given != null&&Model.practitioner.name[0].given.Count>0) 
+                        {
+                            <span>,@Model.practitioner.name[0].given[0]</span>
+                        }
+                    </div>
+                    <div class="col">
+                        @if (Model.practitioner.telecom != null && Model.practitioner.telecom.Count > 0)
+                        {
+                            foreach (var telecom in Model.practitioner.telecom) 
+                            {
+                                <span>@telecom.system</span>
+                                <span>:</span>
+                                <span>@telecom.value</span><br/>
+                            }
+                        }
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        Address:@Model.practitioner.address[0].line[0]<br />
+                        City:@Model.practitioner.address[0].city<br />
+                        State:@Model.practitioner.address[0].state<br />
+                        Zip:@Model.practitioner.address[0].postalCode
+                    </div>
+                    <div class="col">
+                        @if (Model.practitioner.gender != null) 
+                        {
+                        <span>
+                            Gender:@Model.practitioner.gender
+                        </span>
+                        }
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        Birth Date:@Model.practitioner.birthDate?.ToShortDateString()
+                    </div>
+                    <div class="col">
+                        @if (Model.practitioner.qualification != null && Model.practitioner.qualification.Count > 0) 
+                        {
+                        <span>License:@Model.practitioner.qualification[0].code.text</span>
+                        }
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        @if (Model.practitioner.communication != null && Model.practitioner.communication.Count > 0) 
+                        {
+                        <span>Language:@Model.practitioner.communication[0].text</span>
+                        }
+                        
+                    </div>
+                    <div class="col">
+
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button asp-action="FHIRProviderClaims" class="btn">View Claims</button>
+            </div>
+        }
+        <label>&nbsp;</label>
+    </form>
+</div>

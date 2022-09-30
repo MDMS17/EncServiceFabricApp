@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.7.3\build\Microsoft.VisualStudio.Azure.Fabric.Application.props" Condition="Exists('..\packages\Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.7.3\build\Microsoft.VisualStudio.Azure.Fabric.Application.props')" />
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>48477ef7-bf60-470e-b24e-5ee25040614d</ProjectGuid>
+    <ProjectVersion>2.5</ProjectVersion>
+    <MinToolsVersion>1.5</MinToolsVersion>
+    <SupportedMSBuildNuGetPackageVersion>1.7.3</SupportedMSBuildNuGetPackageVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ApplicationPackageRoot\ApplicationManifest.xml" />
+    <None Include="ApplicationParameters\Cloud.xml" />
+    <None Include="ApplicationParameters\Local.1Node.xml" />
+    <None Include="ApplicationParameters\Local.5Node.xml" />
+    <None Include="PublishProfiles\Cloud.xml" />
+    <None Include="PublishProfiles\Local.1Node.xml" />
+    <None Include="PublishProfiles\Local.5Node.xml" />
+    <None Include="Scripts\Deploy-FabricApplication.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DHCSEVR\DHCSEVR.csproj" />
+    <ProjectReference Include="..\Eligibility834\Eligibility834.csproj" />
+    <ProjectReference Include="..\EncLoadCMS277CA\EncLoadCMS277CA.csproj" />
+    <ProjectReference Include="..\EncLoadCMS999\EncLoadCMS999.csproj" />
+    <ProjectReference Include="..\EncLoadCMSMAO001\EncLoadCMSMAO001.csproj" />
+    <ProjectReference Include="..\EncLoadCMSMAO002\EncLoadCMSMAO002.csproj" />
+    <ProjectReference Include="..\EncLoadCMSMAO004\EncLoadCMSMAO004.csproj" />
+    <ProjectReference Include="..\EncWeb\EncWeb.csproj">
+      <ServiceLaunchUrl>http://{MachineName}:{ServicePort}/</ServiceLaunchUrl>
+    </ProjectReference>
+    <ProjectReference Include="..\Export274\Export274.csproj" />
+    <ProjectReference Include="..\Export837\Export837.csproj" />
+    <ProjectReference Include="..\ExportNCPDP\ExportNCPDP.csproj" />
+    <ProjectReference Include="..\FHIRClaims\FHIRClaims.csproj" />
+    <ProjectReference Include="..\FHIRMembers\FHIRMembers.csproj" />
+    <ProjectReference Include="..\FHIRProviders\FHIRProviders.csproj" />
+    <ProjectReference Include="..\GenerateChartReview\GenerateChartReview.csproj" />
+    <ProjectReference Include="..\GenerateMCPDJson\GenerateMCPDJson.csproj" />
+    <ProjectReference Include="..\GeneratePCPAJson\GeneratePCPAJson.csproj" />
+    <ProjectReference Include="..\Load274Data\Load274Data.csproj" />
+    <ProjectReference Include="..\Load837Facets\Load837Facets.csproj" />
+    <ProjectReference Include="..\Load837File\Load837File.csproj" />
+    <ProjectReference Include="..\Load837Meditrac\Load837Meditrac.csproj" />
+    <ProjectReference Include="..\Load837Recon\Load837Recon.csproj" />
+    <ProjectReference Include="..\Load837SubHistory\Load837SubHistory.csproj" />
+    <ProjectReference Include="..\Load837WPC\Load837WPC.csproj" />
+    <ProjectReference Include="..\LoadChartReviewCsv\LoadChartReviewCsv.csproj" />
+    <ProjectReference Include="..\LoadMCPDIPExcel\LoadMCPDIPExcel.csproj" />
+    <ProjectReference Include="..\LoadMCPDIPResponse\LoadMCPDIPResponse.csproj" />
+    <ProjectReference Include="..\LoadNCPDPData\LoadNCPDPData.csproj" />
+    <ProjectReference Include="..\LoadVoidsReplacements\LoadVoidsReplacements.csproj" />
+    <ProjectReference Include="..\Premium820\Premium820.csproj" />
+    <ProjectReference Include="..\Remittance835\Remittance835.csproj" />
+    <ProjectReference Include="..\ValidateMCPDIPJsonFile\ValidateMCPDIPJsonFile.csproj" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+  <PropertyGroup>
+    <ApplicationProjectTargetsPath>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Service Fabric Tools\Microsoft.VisualStudio.Azure.Fabric.ApplicationProject.targets</ApplicationProjectTargetsPath>
+  </PropertyGroup>
+  <Import Project="$(ApplicationProjectTargetsPath)" Condition="Exists('$(ApplicationProjectTargetsPath)')" />
+  <Import Project="..\packages\Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.7.3\build\Microsoft.VisualStudio.Azure.Fabric.Application.targets" Condition="Exists('..\packages\Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.7.3\build\Microsoft.VisualStudio.Azure.Fabric.Application.targets')" />
+  <Target Name="ValidateMSBuildFiles" BeforeTargets="PrepareForBuild">
+    <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.7.3\build\Microsoft.VisualStudio.Azure.Fabric.Application.props')" Text="Unable to find the '..\packages\Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.7.3\build\Microsoft.VisualStudio.Azure.Fabric.Application.props' file. Please restore the 'Microsoft.VisualStudio.Azure.Fabric.MSBuild' Nuget package." />
+    <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.7.3\build\Microsoft.VisualStudio.Azure.Fabric.Application.targets')" Text="Unable to find the '..\packages\Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.7.3\build\Microsoft.VisualStudio.Azure.Fabric.Application.targets' file. Please restore the 'Microsoft.VisualStudio.Azure.Fabric.MSBuild' Nuget package." />
+  </Target>
+</Project>

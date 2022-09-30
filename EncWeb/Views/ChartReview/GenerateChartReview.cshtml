@@ -1,0 +1,29 @@
+﻿@model ExportFilesModel
+@{
+    ViewData["Title"] = "Generate Chart Review Files";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h1>Generate Chart Review Files</h1>
+    <form asp-action="GenerateChartReview">
+        <p>
+            <label>Destination Folder:</label>
+            <input asp-for="@Model.sourcePath" type="text" size="60" readonly="readonly" />
+        </p>
+        <p></p>
+        <p>
+            <label>Total Records:</label>
+            <input asp-for="@Model.totalDatabaseRecords" type="text" size="60" readonly="readonly" />
+        </p>
+        <p>
+            Production / Test: <select asp-for="@Model.ProdTestFlag">
+                <option value="1">Production</option>
+                <option value="2">Test</option>
+            </select>
+        </p>
+        <p>
+            <input type="submit" value="Generate Files" class="btn btn-primary" />
+        </p>
+        <label>Total Database Records: @Model.totalDatabaseRecords, Processed Records: @Model.goodDatabaseRecords</label>
+    </form>
+</div>

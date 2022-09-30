@@ -1,0 +1,525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="EncServiceFabricAppType" ApplicationTypeVersion="1.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+  <Parameters>
+    <Parameter Name="LoadVoidsReplacements_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="LoadVoidsReplacements_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="LoadVoidsReplacements_PartitionCount" DefaultValue="1" />
+    <Parameter Name="LoadVoidsReplacements_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="Load837Facets_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="Load837Facets_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="Load837Facets_PartitionCount" DefaultValue="1" />
+    <Parameter Name="Load837Facets_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="Load837WPC_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="Load837WPC_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="Load837WPC_PartitionCount" DefaultValue="1" />
+    <Parameter Name="Load837WPC_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="FHIRProviders_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="FHIRProviders_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="FHIRProviders_PartitionCount" DefaultValue="1" />
+    <Parameter Name="FHIRProviders_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="FHIRClaims_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="FHIRClaims_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="FHIRClaims_PartitionCount" DefaultValue="1" />
+    <Parameter Name="FHIRClaims_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="FHIRMembers_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="FHIRMembers_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="FHIRMembers_PartitionCount" DefaultValue="1" />
+    <Parameter Name="FHIRMembers_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="Load837Recon_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="Load837Recon_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="Load837Recon_PartitionCount" DefaultValue="1" />
+    <Parameter Name="Load837Recon_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="EncLoadCMS999_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="EncLoadCMS999_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="EncLoadCMS999_PartitionCount" DefaultValue="1" />
+    <Parameter Name="EncLoadCMS999_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="EncLoadCMS277CA_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="EncLoadCMS277CA_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="EncLoadCMS277CA_PartitionCount" DefaultValue="1" />
+    <Parameter Name="EncLoadCMS277CA_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="Load837SubHistory_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="Load837SubHistory_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="Load837SubHistory_PartitionCount" DefaultValue="1" />
+    <Parameter Name="Load837SubHistory_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="Load837Meditrac_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="Load837Meditrac_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="Load837Meditrac_PartitionCount" DefaultValue="1" />
+    <Parameter Name="Load837Meditrac_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="Export837_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="Export837_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="Export837_PartitionCount" DefaultValue="1" />
+    <Parameter Name="Export837_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="Load837File_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="Load837File_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="Load837File_PartitionCount" DefaultValue="1" />
+    <Parameter Name="Load837File_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="ValidateMCPDIPJsonFile_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="ValidateMCPDIPJsonFile_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="ValidateMCPDIPJsonFile_PartitionCount" DefaultValue="1" />
+    <Parameter Name="ValidateMCPDIPJsonFile_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="GeneratePCPAJson_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="GeneratePCPAJson_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="GeneratePCPAJson_PartitionCount" DefaultValue="1" />
+    <Parameter Name="GeneratePCPAJson_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="GenerateMCPDJson_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="GenerateMCPDJson_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="GenerateMCPDJson_PartitionCount" DefaultValue="1" />
+    <Parameter Name="GenerateMCPDJson_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="LoadMCPDIPResponse_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="LoadMCPDIPResponse_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="LoadMCPDIPResponse_PartitionCount" DefaultValue="1" />
+    <Parameter Name="LoadMCPDIPResponse_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="LoadMCPDIPExcel_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="LoadMCPDIPExcel_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="LoadMCPDIPExcel_PartitionCount" DefaultValue="1" />
+    <Parameter Name="LoadMCPDIPExcel_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="ExportNCPDP_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="ExportNCPDP_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="ExportNCPDP_PartitionCount" DefaultValue="1" />
+    <Parameter Name="ExportNCPDP_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="LoadNCPDPData_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="LoadNCPDPData_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="LoadNCPDPData_PartitionCount" DefaultValue="1" />
+    <Parameter Name="LoadNCPDPData_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="GenerateChartReview_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="GenerateChartReview_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="GenerateChartReview_PartitionCount" DefaultValue="1" />
+    <Parameter Name="GenerateChartReview_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="LoadChartReviewCsv_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="LoadChartReviewCsv_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="LoadChartReviewCsv_PartitionCount" DefaultValue="1" />
+    <Parameter Name="LoadChartReviewCsv_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="Export274_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="Export274_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="Export274_PartitionCount" DefaultValue="1" />
+    <Parameter Name="Export274_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="Load274Data_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="Load274Data_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="Load274Data_PartitionCount" DefaultValue="1" />
+    <Parameter Name="Load274Data_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="Remittance835_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="Remittance835_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="Remittance835_PartitionCount" DefaultValue="1" />
+    <Parameter Name="Remittance835_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="Eligibility834_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="Eligibility834_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="Eligibility834_PartitionCount" DefaultValue="1" />
+    <Parameter Name="Eligibility834_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="Premium820_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="Premium820_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="Premium820_PartitionCount" DefaultValue="1" />
+    <Parameter Name="Premium820_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="DHCSEVR_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="DHCSEVR_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="DHCSEVR_PartitionCount" DefaultValue="1" />
+    <Parameter Name="DHCSEVR_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="EncLoadCMSMAO004_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="EncLoadCMSMAO004_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="EncLoadCMSMAO004_PartitionCount" DefaultValue="1" />
+    <Parameter Name="EncLoadCMSMAO004_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="EncLoadCMSMAO002_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="EncLoadCMSMAO002_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="EncLoadCMSMAO002_PartitionCount" DefaultValue="1" />
+    <Parameter Name="EncLoadCMSMAO002_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="EncLoadCMSMAO001_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="EncLoadCMSMAO001_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="EncLoadCMSMAO001_PartitionCount" DefaultValue="1" />
+    <Parameter Name="EncLoadCMSMAO001_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="EncWeb_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="EncWeb_InstanceCount" DefaultValue="-1" />
+  </Parameters>
+  <!-- Import the ServiceManifest from the ServicePackage. The ServiceManifestName and ServiceManifestVersion 
+       should match the Name and Version attributes of the ServiceManifest element defined in the 
+       ServiceManifest.xml file. -->
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="LoadVoidsReplacementsPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[LoadVoidsReplacements_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="Load837FacetsPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[Load837Facets_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="Load837WPCPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[Load837WPC_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="FHIRProvidersPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[FHIRProviders_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="FHIRClaimsPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[FHIRClaims_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="FHIRMembersPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[FHIRMembers_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="Load837ReconPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[Load837Recon_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="EncLoadCMS999Pkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[EncLoadCMS999_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="EncLoadCMS277CAPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[EncLoadCMS277CA_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="Load837SubHistoryPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[Load837SubHistory_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="Load837MeditracPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[Load837Meditrac_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="Export837Pkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[Export837_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="Load837FilePkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[Load837File_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="ValidateMCPDIPJsonFilePkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[ValidateMCPDIPJsonFile_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="GeneratePCPAJsonPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[GeneratePCPAJson_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="GenerateMCPDJsonPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[GenerateMCPDJson_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="LoadMCPDIPResponsePkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[LoadMCPDIPResponse_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="LoadMCPDIPExcelPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[LoadMCPDIPExcel_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="ExportNCPDPPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[ExportNCPDP_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="LoadNCPDPDataPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[LoadNCPDPData_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="GenerateChartReviewPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[GenerateChartReview_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="LoadChartReviewCsvPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[LoadChartReviewCsv_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="Export274Pkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[Export274_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="Load274DataPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[Load274Data_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="Remittance835Pkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[Remittance835_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="Eligibility834Pkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[Eligibility834_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="Premium820Pkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[Premium820_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="DHCSEVRPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[DHCSEVR_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="EncLoadCMSMAO004Pkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[EncLoadCMSMAO004_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="EncLoadCMSMAO002Pkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[EncLoadCMSMAO002_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="EncLoadCMSMAO001Pkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[EncLoadCMSMAO001_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="EncWebPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[EncWeb_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <DefaultServices>
+    <!-- The section below creates instances of service types, when an instance of this 
+         application type is created. You can also create one or more instances of service type using the 
+         ServiceFabric PowerShell module.
+         
+         The attribute ServiceTypeName below must match the name defined in the imported ServiceManifest.xml file. -->
+    <Service Name="LoadVoidsReplacements" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="LoadVoidsReplacementsType" TargetReplicaSetSize="[LoadVoidsReplacements_TargetReplicaSetSize]" MinReplicaSetSize="[LoadVoidsReplacements_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[LoadVoidsReplacements_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="Load837Facets" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="Load837FacetsType" TargetReplicaSetSize="[Load837Facets_TargetReplicaSetSize]" MinReplicaSetSize="[Load837Facets_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[Load837Facets_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="Load837WPC" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="Load837WPCType" TargetReplicaSetSize="[Load837WPC_TargetReplicaSetSize]" MinReplicaSetSize="[Load837WPC_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[Load837WPC_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="FHIRProviders" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="FHIRProvidersType" TargetReplicaSetSize="[FHIRProviders_TargetReplicaSetSize]" MinReplicaSetSize="[FHIRProviders_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[FHIRProviders_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="FHIRClaims" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="FHIRClaimsType" TargetReplicaSetSize="[FHIRClaims_TargetReplicaSetSize]" MinReplicaSetSize="[FHIRClaims_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[FHIRClaims_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="FHIRMembers" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="FHIRMembersType" TargetReplicaSetSize="[FHIRMembers_TargetReplicaSetSize]" MinReplicaSetSize="[FHIRMembers_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[FHIRMembers_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="Load837Recon" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="Load837ReconType" TargetReplicaSetSize="[Load837Recon_TargetReplicaSetSize]" MinReplicaSetSize="[Load837Recon_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[Load837Recon_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="EncLoadCMS999" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="EncLoadCMS999Type" TargetReplicaSetSize="[EncLoadCMS999_TargetReplicaSetSize]" MinReplicaSetSize="[EncLoadCMS999_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[EncLoadCMS999_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="EncLoadCMS277CA" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="EncLoadCMS277CAType" TargetReplicaSetSize="[EncLoadCMS277CA_TargetReplicaSetSize]" MinReplicaSetSize="[EncLoadCMS277CA_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[EncLoadCMS277CA_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="Load837SubHistory" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="Load837SubHistoryType" TargetReplicaSetSize="[Load837SubHistory_TargetReplicaSetSize]" MinReplicaSetSize="[Load837SubHistory_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[Load837SubHistory_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="Load837Meditrac" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="Load837MeditracType" TargetReplicaSetSize="[Load837Meditrac_TargetReplicaSetSize]" MinReplicaSetSize="[Load837Meditrac_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[Load837Meditrac_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="Export837" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="Export837Type" TargetReplicaSetSize="[Export837_TargetReplicaSetSize]" MinReplicaSetSize="[Export837_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[Export837_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="Load837File" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="Load837FileType" TargetReplicaSetSize="[Load837File_TargetReplicaSetSize]" MinReplicaSetSize="[Load837File_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[Load837File_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="ValidateMCPDIPJsonFile" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="ValidateMCPDIPJsonFileType" TargetReplicaSetSize="[ValidateMCPDIPJsonFile_TargetReplicaSetSize]" MinReplicaSetSize="[ValidateMCPDIPJsonFile_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[ValidateMCPDIPJsonFile_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="GeneratePCPAJson" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="GeneratePCPAJsonType" TargetReplicaSetSize="[GeneratePCPAJson_TargetReplicaSetSize]" MinReplicaSetSize="[GeneratePCPAJson_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[GeneratePCPAJson_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="GenerateMCPDJson" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="GenerateMCPDJsonType" TargetReplicaSetSize="[GenerateMCPDJson_TargetReplicaSetSize]" MinReplicaSetSize="[GenerateMCPDJson_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[GenerateMCPDJson_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="LoadMCPDIPResponse" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="LoadMCPDIPResponseType" TargetReplicaSetSize="[LoadMCPDIPResponse_TargetReplicaSetSize]" MinReplicaSetSize="[LoadMCPDIPResponse_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[LoadMCPDIPResponse_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="LoadMCPDIPExcel" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="LoadMCPDIPExcelType" TargetReplicaSetSize="[LoadMCPDIPExcel_TargetReplicaSetSize]" MinReplicaSetSize="[LoadMCPDIPExcel_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[LoadMCPDIPExcel_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="ExportNCPDP" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="ExportNCPDPType" TargetReplicaSetSize="[ExportNCPDP_TargetReplicaSetSize]" MinReplicaSetSize="[ExportNCPDP_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[ExportNCPDP_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="LoadNCPDPData" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="LoadNCPDPDataType" TargetReplicaSetSize="[LoadNCPDPData_TargetReplicaSetSize]" MinReplicaSetSize="[LoadNCPDPData_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[LoadNCPDPData_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="GenerateChartReview" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="GenerateChartReviewType" TargetReplicaSetSize="[GenerateChartReview_TargetReplicaSetSize]" MinReplicaSetSize="[GenerateChartReview_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[GenerateChartReview_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="LoadChartReviewCsv" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="LoadChartReviewCsvType" TargetReplicaSetSize="[LoadChartReviewCsv_TargetReplicaSetSize]" MinReplicaSetSize="[LoadChartReviewCsv_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[LoadChartReviewCsv_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="Export274" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="Export274Type" TargetReplicaSetSize="[Export274_TargetReplicaSetSize]" MinReplicaSetSize="[Export274_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[Export274_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="Load274Data" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="Load274DataType" TargetReplicaSetSize="[Load274Data_TargetReplicaSetSize]" MinReplicaSetSize="[Load274Data_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[Load274Data_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="Remittance835" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="Remittance835Type" TargetReplicaSetSize="[Remittance835_TargetReplicaSetSize]" MinReplicaSetSize="[Remittance835_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[Remittance835_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="Eligibility834" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="Eligibility834Type" TargetReplicaSetSize="[Eligibility834_TargetReplicaSetSize]" MinReplicaSetSize="[Eligibility834_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[Eligibility834_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="Premium820" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="Premium820Type" TargetReplicaSetSize="[Premium820_TargetReplicaSetSize]" MinReplicaSetSize="[Premium820_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[Premium820_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="DHCSEVR" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="DHCSEVRType" TargetReplicaSetSize="[DHCSEVR_TargetReplicaSetSize]" MinReplicaSetSize="[DHCSEVR_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[DHCSEVR_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="EncLoadCMSMAO004" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="EncLoadCMSMAO004Type" TargetReplicaSetSize="[EncLoadCMSMAO004_TargetReplicaSetSize]" MinReplicaSetSize="[EncLoadCMSMAO004_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[EncLoadCMSMAO004_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="EncLoadCMSMAO002" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="EncLoadCMSMAO002Type" TargetReplicaSetSize="[EncLoadCMSMAO002_TargetReplicaSetSize]" MinReplicaSetSize="[EncLoadCMSMAO002_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[EncLoadCMSMAO002_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="EncLoadCMSMAO001" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="EncLoadCMSMAO001Type" TargetReplicaSetSize="[EncLoadCMSMAO001_TargetReplicaSetSize]" MinReplicaSetSize="[EncLoadCMSMAO001_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[EncLoadCMSMAO001_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="EncWeb" ServicePackageActivationMode="ExclusiveProcess">
+      <StatelessService ServiceTypeName="EncWebType" InstanceCount="[EncWeb_InstanceCount]">
+        <SingletonPartition />
+      </StatelessService>
+    </Service>
+  </DefaultServices>
+</ApplicationManifest>

@@ -1,0 +1,70 @@
+﻿@model Export837Model
+@{
+    ViewData["Title"] = "Generate 837 Files";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h1>Generate 837 Files</h1>
+    <form asp-action="Generate837">
+        <p>
+            <label>Destination Folder:</label>
+            <input asp-for="@Model.sourcePath" type="text" size="60" readonly="readonly" />
+        </p>
+        <p></p>
+        <p>
+            <input type="checkbox" asp-for="@Model.ExportCMSP" />
+            <label>Total Records CMS Professional:</label>
+            <input asp-for="@Model.newFiles[0]" type="text" size="60" readonly="readonly" />
+        </p>
+        <p>
+            <input type="checkbox" asp-for="@Model.ExportCMSI" />
+            <label>Total Records CMS Institutional:</label>
+            <input asp-for="@Model.newFiles[1]" type="text" size="60" readonly="readonly" />
+        </p>
+        <p>
+            <input type="checkbox" asp-for="@Model.ExportCMSE" />
+            <label>Total Records CMS DME:</label>
+            <input asp-for="@Model.newFiles[2]" type="text" size="60" readonly="readonly" />
+        </p>
+        <p>
+            <input type="checkbox" asp-for="@Model.ExportDualP" />
+            <label>Total Records Dual Professional:</label>
+            <input asp-for="@Model.newFiles[3]" type="text" size="60" readonly="readonly" />
+        </p>
+        <p>
+            <input type="checkbox" asp-for="@Model.ExportDualI"/>
+            <label>Total Records Dual Institutional:</label>
+            <input asp-for="@Model.newFiles[4]" type="text" size="60" readonly="readonly" />
+        </p>
+        <p>
+            <input type="checkbox" asp-for="@Model.ExportDualE"/>
+            <label>Total Records Dual DME:</label>
+            <input asp-for="@Model.newFiles[5]" type="text" size="60" readonly="readonly" />
+        </p>
+        <p>
+            <input type="checkbox" asp-for="@Model.ExportStateP"/>
+            <label>Total Records State Professional:</label>
+            <input asp-for="@Model.newFiles[6]" type="text" size="60" readonly="readonly" />
+        </p>
+        <p>
+            <input type="checkbox" asp-for="@Model.ExportStateI"/>
+            <label>Total Records State Institutional:</label>
+            <input asp-for="@Model.newFiles[7]" type="text" size="60" readonly="readonly" />
+        </p>
+        <p>
+            <input type="checkbox" asp-for="@Model.ExportStateE"/>
+            <label>Total Records State DME:</label>
+            <input asp-for="@Model.newFiles[8]" type="text" size="60" readonly="readonly" />
+        </p>
+        <p>
+            Production / Test: <select asp-for="@Model.ProdTestFlag">
+                <option value="1">Production</option>
+                <option value="2">Test</option>
+            </select>
+        </p>
+        <p>
+            <input type="submit" value="Generate 837 Files" class="btn btn-primary" />
+        </p>
+        <label>Total Database Records: @Model.totalDatabaseRecords, Processed Records: @Model.goodDatabaseRecords</label>
+    </form>
+</div>

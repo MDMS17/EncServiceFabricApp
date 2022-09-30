@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EncWeb</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/datepicker.css"/>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">EDI Service Fabric App</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="main_nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">CMS Response</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" asp-area="" asp-controller="CMSResponse" asp-action="CMS277CA">277CA</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="CMSResponse" asp-action="CMS999">999</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="CMSResponse" asp-action="CMSMAO001">MAO001</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="CMSResponse" asp-action="CMSMAO002">MAO002</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="CMSResponse" asp-action="CMSMAO004">MAO004</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">State Response</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" asp-area="" asp-controller="StateResponse" asp-action="DHCSEVR">DHCS EVR</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="StateResponse" asp-action="Premium820">Premium 820</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="StateResponse" asp-action="Eligibility834">Eligibility 834</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="StateResponse" asp-action="Remittance835">Remittance 835</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">837 Submit</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" asp-area="" asp-controller="Submission837" asp-action="Load837File">Load 837 File</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="Submission837" asp-action="Load837Meditrac">Load 837 Meditrac</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="Submission837" asp-action="Load837Facets">Load 837 Facets</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="Submission837" asp-action="Load837WPC">Load 837 WPC</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="Submission837" asp-action="Generate837">Generate 837</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="Submission837" asp-action="Load837SubHistory">Load 837 SubHistory</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="Submission837" asp-action="LoadVoidsReplacements">Load Voids Replacements</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="Submission837" asp-action="LoadRecon">Load Recon</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="Submission837" asp-action="ExportRecon">Export Recon</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Chart Review</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" asp-area="" asp-controller="ChartReview" asp-action="LoadChartReviewCsv">Load Data From File</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="ChartReview" asp-action="LoadChartReviewDatabase">Load Data From Database</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="ChartReview" asp-action="GenerateChartReview">Generate Chart Review Files</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">NCPDP</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" asp-area="" asp-controller="NCPDP" asp-action="LoadNCPDPData">Load NCPDP From File</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="NCPDP" asp-action="LoadNCPDPDatabase">Load NCPDP From Database</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="NCPDP" asp-action="LoadNCPDPResponse">Load NCPDP Response</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="NCPDP" asp-action="ExportNCPDP">Export NCPDP</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Provider 274</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" asp-area="" asp-controller="Provider274" asp-action="Load274Data">Load 274 From File</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="Provider274" asp-action="Load274Database">Load 274 From Database</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="Provider274" asp-action="LoadToSubmissionHistory">Load To Submission Hsitory</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="Provider274" asp-action="Load274Response">Load 274 Reponse</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="Provider274" asp-action="Export274">Export 274</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">MCPDIP</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" asp-area="" asp-controller="MCPDIP" asp-action="LoadMCPDIPFile">Load MCPDIP files</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="MCPDIP" asp-action="LoadMCPDIPDatabase">Load MCPDIP Database</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="MCPDIP" asp-action="LoadMCPDIPResponse">Load MCPDIP Response</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="MCPDIP" asp-action="GenerateMCPDJson">Generate MCPD Json Files</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="MCPDIP" asp-action="GeneratePCPAJson">Generate PCPA Json Files</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="MCPDIP" asp-action="ValidateMCPDIPJsonFile">Validate Json Files</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">FHIR</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" asp-area="" asp-controller="FHIR" asp-action="MembersModule">Members Module</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="FHIR" asp-action="ProvidersModule">Providers Module</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <p class="nav navbar-text navbar-right">Welcome, @User.Identity.Name!</p>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - EncWeb - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap-datepicker.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

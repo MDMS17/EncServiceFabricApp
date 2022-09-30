@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="CMSMAO001\" />
+    <Folder Include="CMSMAO002\" />
+    <Folder Include="DHCS\" />
+    <Folder Include="Eligibility834\" />
+    <Folder Include="NCPDP42\" />
+    <Folder Include="ChartReview\" />
+    <Folder Include="Premium820\" />
+    <Folder Include="Remittance835\" />
+  </ItemGroup>
+
+</Project>

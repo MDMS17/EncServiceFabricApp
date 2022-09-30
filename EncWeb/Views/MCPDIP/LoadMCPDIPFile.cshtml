@@ -1,0 +1,46 @@
+﻿@model TwoTiersFilesModel
+@{
+    ViewData["Title"] = "Load MCPDIP from excel files";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h1>MCPDIP Excel Files</h1>
+    <form asp-action="LoadMCPDIPFile">
+        <p>
+            <label>File Path:</label>
+            <input asp-for="@Model.sourcePath" type="text" size="60" readonly="readonly" />
+        </p>
+        <div class="accordion" id="accordion1">
+            @foreach (var folder in Model.twoTiersFiles.Select(x=>x.Item1).Distinct())
+            {
+                var items = Model.twoTiersFiles.Where(x => x.Item1 == folder).ToList();
+                <div class="card">
+                    <div class="card-header" id="@items[0].Item3">
+                        <h4 class="mb-sm-0">
+                            <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#@items[0].Item4">
+                                @folder&nbsp;&nbsp;(@items[0].Item5)
+                            </button>
+                        </h4>
+                    </div>
+                    <div id="@items[0].Item4" class="collapse" aria-labelledby="@items[0].Item3" data-parent="#accordion1">
+                        <div class="card-body">
+                            @foreach (var item in items)
+                            {
+                                @item.Item2<br />
+                            }
+                        </div>
+                    </div>
+                </div>
+             }
+         </div>
+         <p></p>
+         <p>
+            <label>Archive Path:</label>
+            <input asp-for="@Model.archivePath" type="text" size="60" readonly="readonly" />
+         </p>
+         <p>
+            <input type="submit" value="Process New Files" class="btn btn-primary" />
+         </p>
+         <label>Processed total files: @Model.totalFiles, good files: @Model.goodFiles</label>
+    </form>
+</div>

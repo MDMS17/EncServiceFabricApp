@@ -1,0 +1,75 @@
+﻿@model Load837DatabaseModel
+@{
+    ViewData["Title"] = "Load 837 Facets";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h1>Load Facets records for 837</h1>
+    <form asp-action="Load837Facets">
+        <p><input type="checkbox" asp-for="@Model.DateRange"/><label>Date Range</label></p>
+        <table>
+            <tr>
+                <td>Last Run Start Date:</td>
+                <td><input type="text" asp-for="lastRunStartDate" value="@Model.lastRunStartDate" readonly="readonly" /></td>
+                <td>Current Run Start Date:</td>
+                <td><input type="text" asp-for="currentRunStartDate" id="startDate" /></td>
+            </tr>
+            <tr>
+                <td>Last Run End Date:</td>
+                <td><input type="text" asp-for="lastRunEndDate" value="@Model.lastRunEndDate" readonly="readonly" /></td>
+                <td>Current Run End Date:</td>
+                <td><input type="text" asp-for="currentRunEndDate" id="endDate" /></td>
+            </tr>
+        </table>
+        <p><input type="checkbox" asp-for="@Model.Include"/><label>Include</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" asp-for="@Model.Exclude"/><label>Exclude</label></p>
+        <table style="width:100%;border:1px solid">
+            @foreach (var item in Model.newFiles)
+            {
+                <tr>
+                    <td>@item</td>
+                </tr>
+            }
+        </table>
+        <p>
+            <input type="checkbox" asp-for="@Model.LoadCMSP" />
+            <label>Load CMS Professional</label>
+        </p>
+        <p>
+            <input type="checkbox" asp-for="@Model.LoadCMSI" />
+            <label>Load CMS Institutional</label>
+        </p>
+        <p>
+            <input type="checkbox" asp-for="@Model.LoadDualP" />
+            <label>Load Dual Professional</label>
+        </p>
+        <p>
+            <input type="checkbox" asp-for="@Model.LoadDualI" />
+            <label>Load Dual Institutional</label>
+        </p>
+        <p>
+            <input type="checkbox" asp-for="@Model.LoadStateP" />
+            <label>Load State Professional</label>
+        </p>
+        <p>
+            <input type="checkbox" asp-for="@Model.LoadStateI" />
+            <label>Load State Institutional</label>
+        </p>
+        <p>
+            @if (Model.enableLoadButton)
+            {
+                <input type="submit" value="Load Facets Data" class="btn btn-primary" />
+            }
+            else
+            {
+                <input type="submit" value="Load Facets Data" class="btn btn-primary" disabled="disabled" />
+            }
+        </p>
+        <p>
+            <label>@Model.message</label>
+        </p>
+        <input type="hidden" asp-for="lastRunDate" />
+        <input type="hidden" asp-for="lastRunUser" />
+        <input type="hidden" asp-for="lastRunStatus" />
+    </form>
+
+</div>

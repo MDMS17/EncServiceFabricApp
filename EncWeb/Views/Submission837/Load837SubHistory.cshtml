@@ -1,0 +1,39 @@
+﻿@model ExportFilesModel
+@{
+    ViewData["Title"] = "Load 837 submission history";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h1>Load 837 submission history</h1>
+    <form asp-action="Load837SubHistory">
+        <p>
+            <label>Source Folder:</label>
+            <input asp-for="@Model.sourcePath" type="text" size="60" readonly="readonly" />
+        </p>
+        <p></p>
+        <table style="width:100%;border:1px solid">
+            @foreach (var item in Model.newFiles)
+            {
+                <tr>
+                    <td>@item</td>
+                </tr>
+            }
+        </table>
+        <p></p>
+        <p>
+            <label>Archive Path:</label>
+            <input asp-for="@Model.archivePath" type="text" size="60" readonly="readonly" />
+        </p>
+        <p>
+            @if (Model.enableSubmit)
+            {
+                <input type="submit" value="Load 837 Files" class="btn btn-primary" />
+            }
+            else
+            {
+                <input type="submit" value="Load 837 Files" class="btn btn-primary" disabled="disabled" />
+            }
+        </p>
+        <label>@Model.displayMessage</label>
+    </form>
+</div>

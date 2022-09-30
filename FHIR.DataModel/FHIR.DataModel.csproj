@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E368FCD5-0D61-4030-BE99-8762436D5ACD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FHIR.DataModel</RootNamespace>
+    <AssemblyName>FHIR.DataModel</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administration\CareTeam.cs" />
+    <Compile Include="Administration\Device.cs" />
+    <Compile Include="Administration\HealthCareService.cs" />
+    <Compile Include="Administration\Location.cs" />
+    <Compile Include="Administration\Organization.cs" />
+    <Compile Include="Administration\Patient.cs" />
+    <Compile Include="Administration\Practitioner.cs" />
+    <Compile Include="ClinicalReasoning\GuidanceResponse.cs" />
+    <Compile Include="ClinicalReasoning\Library.cs" />
+    <Compile Include="ClinicalReasoning\Measure.cs" />
+    <Compile Include="ClinicalReasoning\MeasureReport.cs" />
+    <Compile Include="ClinicalReasoning\PlanDefinition.cs" />
+    <Compile Include="Clinical\Allergy.cs" />
+    <Compile Include="Clinical\CarePlan.cs" />
+    <Compile Include="Clinical\FamilyHistory.cs" />
+    <Compile Include="Clinical\Goal.cs" />
+    <Compile Include="Clinical\Problem.cs" />
+    <Compile Include="Clinical\Procedure.cs" />
+    <Compile Include="Clinical\RiskAccessment.cs" />
+    <Compile Include="Clinical\ServiceRequest.cs" />
+    <Compile Include="DataType\Abatement.cs" />
+    <Compile Include="DataType\Accident.cs" />
+    <Compile Include="DataType\Action.cs" />
+    <Compile Include="DataType\Activity.cs" />
+    <Compile Include="DataType\Additive.cs" />
+    <Compile Include="DataType\Address.cs" />
+    <Compile Include="DataType\Adjudication.cs" />
+    <Compile Include="DataType\Age.cs" />
+    <Compile Include="DataType\Allowed.cs" />
+    <Compile Include="DataType\AllowedEligibilityResponse.cs" />
+    <Compile Include="DataType\Annotation.cs" />
+    <Compile Include="DataType\AsNeeded.cs" />
+    <Compile Include="DataType\Attachment.cs" />
+    <Compile Include="DataType\Author.cs" />
+    <Compile Include="DataType\AvailableTime.cs" />
+    <Compile Include="DataType\BackboneElement.cs" />
+    <Compile Include="DataType\Batch.cs" />
+    <Compile Include="DataType\BenefitBalance.cs" />
+    <Compile Include="DataType\BenefitEligibilityResponse.cs" />
+    <Compile Include="DataType\Born.cs" />
+    <Compile Include="DataType\Bounds.cs" />
+    <Compile Include="DataType\CareTeamClaim.cs" />
+    <Compile Include="DataType\ChargeItemInvoice.cs" />
+    <Compile Include="DataType\ClassCoverage.cs" />
+    <Compile Include="DataType\CodeableConcept.cs" />
+    <Compile Include="DataType\CodeFilter.cs" />
+    <Compile Include="DataType\Coding.cs" />
+    <Compile Include="DataType\Collected.cs" />
+    <Compile Include="DataType\Collection.cs" />
+    <Compile Include="DataType\Communication.cs" />
+    <Compile Include="DataType\Component.cs" />
+    <Compile Include="DataType\ComponentMeasure.cs" />
+    <Compile Include="DataType\ComponentMeasureReport.cs" />
+    <Compile Include="DataType\Condition.cs" />
+    <Compile Include="DataType\ConditionAction.cs" />
+    <Compile Include="DataType\Contact.cs" />
+    <Compile Include="DataType\ContactDetail.cs" />
+    <Compile Include="DataType\ContactOrganization.cs" />
+    <Compile Include="DataType\ContactPoint.cs" />
+    <Compile Include="DataType\Container.cs" />
+    <Compile Include="DataType\CostToBeneficiary.cs" />
+    <Compile Include="DataType\CoverageAccount.cs" />
+    <Compile Include="DataType\DataFilter.cs" />
+    <Compile Include="DataType\DataRequirement.cs" />
+    <Compile Include="DataType\Deceased.cs" />
+    <Compile Include="DataType\Definition.cs" />
+    <Compile Include="DataType\Detail.cs" />
+    <Compile Include="DataType\DetailClaim.cs" />
+    <Compile Include="DataType\DetailExplanationOfBenefit.cs" />
+    <Compile Include="DataType\DetailExplanationOfBenefitAdd.cs" />
+    <Compile Include="DataType\DetailGoal.cs" />
+    <Compile Include="DataType\DetailPlanDefinition.cs" />
+    <Compile Include="DataType\DeviceName.cs" />
+    <Compile Include="DataType\Diagnosis.cs" />
+    <Compile Include="DataType\DiagnosisClaim.cs" />
+    <Compile Include="DataType\DiagnosisEligibilityRequest.cs" />
+    <Compile Include="DataType\DispenseRequest.cs" />
+    <Compile Include="DataType\DomainResource.cs" />
+    <Compile Include="DataType\Dosage.cs" />
+    <Compile Include="DataType\DosageMedicationAdministration.cs" />
+    <Compile Include="DataType\Dose.cs" />
+    <Compile Include="DataType\DoseAndRate.cs" />
+    <Compile Include="DataType\DoseNumber.cs" />
+    <Compile Include="DataType\Due.cs" />
+    <Compile Include="DataType\DynamicValue.cs" />
+    <Compile Include="DataType\Education.cs" />
+    <Compile Include="DataType\Effective.cs" />
+    <Compile Include="DataType\EffectiveMedicationAdministration.cs" />
+    <Compile Include="DataType\Element.cs" />
+    <Compile Include="DataType\Eligibility.cs" />
+    <Compile Include="DataType\ErrorEligibilityResponse.cs" />
+    <Compile Include="DataType\Evidence.cs" />
+    <Compile Include="DataType\Exception.cs" />
+    <Compile Include="DataType\Expression.cs" />
+    <Compile Include="DataType\Extension.cs" />
+    <Compile Include="DataType\FastingStatus.cs" />
+    <Compile Include="DataType\Financial.cs" />
+    <Compile Include="DataType\FocalDevice.cs" />
+    <Compile Include="DataType\Goal.cs" />
+    <Compile Include="DataType\Group.cs" />
+    <Compile Include="DataType\GroupMeasureReport.cs" />
+    <Compile Include="DataType\Guarantor.cs" />
+    <Compile Include="DataType\HoursOfOperation.cs" />
+    <Compile Include="DataType\HumanName.cs" />
+    <Compile Include="DataType\Identifier.cs" />
+    <Compile Include="DataType\Ingredient.cs" />
+    <Compile Include="DataType\InitialFill.cs" />
+    <Compile Include="DataType\Inner.cs" />
+    <Compile Include="DataType\Insurance.cs" />
+    <Compile Include="DataType\InsuranceEligibilityRequest.cs" />
+    <Compile Include="DataType\InsuranceEligibilityResponse.cs" />
+    <Compile Include="DataType\InsuranceExplanationOfBenefit.cs" />
+    <Compile Include="DataType\ItemClaim.cs" />
+    <Compile Include="DataType\ItemEligibilityRequest.cs" />
+    <Compile Include="DataType\ItemEligibilityResponse.cs" />
+    <Compile Include="DataType\ItemExplanationOfBenefit.cs" />
+    <Compile Include="DataType\ItemExplanationOfBenefitAdd.cs" />
+    <Compile Include="DataType\LineItem.cs" />
+    <Compile Include="DataType\Location.cs" />
+    <Compile Include="DataType\LocationItem.cs" />
+    <Compile Include="DataType\Module.cs" />
+    <Compile Include="DataType\Offset.cs" />
+    <Compile Include="DataType\ParameterDefinition.cs" />
+    <Compile Include="DataType\ParticipantAccount.cs" />
+    <Compile Include="DataType\ParticipantAction.cs" />
+    <Compile Include="DataType\ParticipantAppointment.cs" />
+    <Compile Include="DataType\Payee.cs" />
+    <Compile Include="DataType\Payment.cs" />
+    <Compile Include="DataType\Population.cs" />
+    <Compile Include="DataType\PopulationMeasureReport.cs" />
+    <Compile Include="DataType\PriceComponent.cs" />
+    <Compile Include="DataType\Procedure.cs" />
+    <Compile Include="DataType\ProcedureClaim.cs" />
+    <Compile Include="DataType\ProcessNote.cs" />
+    <Compile Include="DataType\ProductChargeItem.cs" />
+    <Compile Include="DataType\QuantityReferral.cs" />
+    <Compile Include="DataType\RelatedAction.cs" />
+    <Compile Include="DataType\RelatedArtifact.cs" />
+    <Compile Include="DataType\RelatedClaim.cs" />
+    <Compile Include="DataType\Serviced.cs" />
+    <Compile Include="DataType\Sort.cs" />
+    <Compile Include="DataType\Stratifier.cs" />
+    <Compile Include="DataType\StratifierMeasureReport.cs" />
+    <Compile Include="DataType\StratumMeasureReport.cs" />
+    <Compile Include="DataType\SubDetail.cs" />
+    <Compile Include="DataType\SubDetailExplanationOfBenefit.cs" />
+    <Compile Include="DataType\SubDetailExplanationOfBenefitAdd.cs" />
+    <Compile Include="DataType\Subject.cs" />
+    <Compile Include="DataType\SupplementalData.cs" />
+    <Compile Include="DataType\SupportingInfo.cs" />
+    <Compile Include="DataType\TargetPlanDefinition.cs" />
+    <Compile Include="DataType\TaskInputOutput.cs" />
+    <Compile Include="DataType\Instance.cs" />
+    <Compile Include="DataType\Item.cs" />
+    <Compile Include="DataType\Link.cs" />
+    <Compile Include="DataType\Media.cs" />
+    <Compile Include="DataType\Medication.cs" />
+    <Compile Include="DataType\Meta.cs" />
+    <Compile Include="DataType\Money.cs" />
+    <Compile Include="DataType\Narrative.cs" />
+    <Compile Include="DataType\NotAvailable.cs" />
+    <Compile Include="DataType\Occurrence.cs" />
+    <Compile Include="DataType\OccurrenceImmunization.cs" />
+    <Compile Include="DataType\Onset.cs" />
+    <Compile Include="DataType\OnsetCondition.cs" />
+    <Compile Include="DataType\Outer.cs" />
+    <Compile Include="DataType\Participant.cs" />
+    <Compile Include="DataType\Performed.cs" />
+    <Compile Include="DataType\Performer.cs" />
+    <Compile Include="DataType\PerformerDispense.cs" />
+    <Compile Include="DataType\Period.cs" />
+    <Compile Include="DataType\Position.cs" />
+    <Compile Include="DataType\Prediction.cs" />
+    <Compile Include="DataType\Probability.cs" />
+    <Compile Include="DataType\Processing.cs" />
+    <Compile Include="DataType\Product.cs" />
+    <Compile Include="DataType\Property.cs" />
+    <Compile Include="DataType\ProtocolApplied.cs" />
+    <Compile Include="DataType\Qualification.cs" />
+    <Compile Include="DataType\Quality.cs" />
+    <Compile Include="DataType\Quantity.cs" />
+    <Compile Include="DataType\QuantityServiceRequest.cs" />
+    <Compile Include="DataType\Range.cs" />
+    <Compile Include="DataType\Rate.cs" />
+    <Compile Include="DataType\RateMedicationAdministration.cs" />
+    <Compile Include="DataType\Ratio.cs" />
+    <Compile Include="DataType\Reaction.cs" />
+    <Compile Include="DataType\ReactionImmunization.cs" />
+    <Compile Include="DataType\Reference.cs" />
+    <Compile Include="DataType\ReferenceRange.cs" />
+    <Compile Include="DataType\ReferenceSeq.cs" />
+    <Compile Include="DataType\Repeat.cs" />
+    <Compile Include="DataType\Reported.cs" />
+    <Compile Include="DataType\Repository.cs" />
+    <Compile Include="DataType\Resource.cs" />
+    <Compile Include="DataType\Restriction.cs" />
+    <Compile Include="DataType\Roc.cs" />
+    <Compile Include="DataType\SampleData.cs" />
+    <Compile Include="DataType\Schedule.cs" />
+    <Compile Include="DataType\Series.cs" />
+    <Compile Include="DataType\SeriesDoses.cs" />
+    <Compile Include="DataType\Specialization.cs" />
+    <Compile Include="DataType\Stage.cs" />
+    <Compile Include="DataType\Start.cs" />
+    <Compile Include="DataType\StatusReason.cs" />
+    <Compile Include="DataType\StructureVariant.cs" />
+    <Compile Include="DataType\Subsstitution.cs" />
+    <Compile Include="DataType\Substitution.cs" />
+    <Compile Include="DataType\Target.cs" />
+    <Compile Include="DataType\Time.cs" />
+    <Compile Include="DataType\Timing.cs" />
+    <Compile Include="DataType\TimingAction.cs" />
+    <Compile Include="DataType\TimingClaim.cs" />
+    <Compile Include="DataType\TimingTriggerDefinition.cs" />
+    <Compile Include="DataType\SupportingInfoEligibilityRequest.cs" />
+    <Compile Include="DataType\Total.cs" />
+    <Compile Include="DataType\TriggerDefinition.cs" />
+    <Compile Include="DataType\UdiCarrier.cs" />
+    <Compile Include="DataType\UsageContext.cs" />
+    <Compile Include="DataType\Used.cs" />
+    <Compile Include="DataType\UsedEligibilityResponse.cs" />
+    <Compile Include="DataType\Value.cs" />
+    <Compile Include="DataType\ValueClaim.cs" />
+    <Compile Include="DataType\ValueCoverage.cs" />
+    <Compile Include="DataType\ValueDataRequirement.cs" />
+    <Compile Include="DataType\ValueUsageContext.cs" />
+    <Compile Include="DataType\Variant.cs" />
+    <Compile Include="DataType\Version.cs" />
+    <Compile Include="DataType\When.cs" />
+    <Compile Include="Diagnostics\Genomics.cs" />
+    <Compile Include="Diagnostics\ImagingStudy.cs" />
+    <Compile Include="Diagnostics\Observation.cs" />
+    <Compile Include="Diagnostics\Report.cs" />
+    <Compile Include="Diagnostics\Specimen.cs" />
+    <Compile Include="Financial\Account.cs" />
+    <Compile Include="Financial\ChargeItem.cs" />
+    <Compile Include="Financial\Claim.cs" />
+    <Compile Include="Financial\Coverage.cs" />
+    <Compile Include="Financial\EligibilityResponse.cs" />
+    <Compile Include="Financial\ExplanationOfBenefit.cs" />
+    <Compile Include="Financial\Invoice.cs" />
+    <Compile Include="Financial\EligibilityRequest.cs" />
+    <Compile Include="Medication\Administration.cs" />
+    <Compile Include="Medication\Dispense.cs" />
+    <Compile Include="Medication\Immunization.cs" />
+    <Compile Include="Medication\Medication.cs" />
+    <Compile Include="Medication\Request.cs" />
+    <Compile Include="Medication\Statement.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Workflow\Appointment.cs" />
+    <Compile Include="Workflow\PlanDefinition.cs" />
+    <Compile Include="Workflow\Referral.cs" />
+    <Compile Include="Workflow\Schedule.cs" />
+    <Compile Include="Workflow\Task.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

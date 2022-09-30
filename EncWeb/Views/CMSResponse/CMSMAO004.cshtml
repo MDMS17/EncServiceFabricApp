@@ -1,0 +1,32 @@
+﻿@model NewFilesModel
+@{
+    ViewData["Title"] = "CMS Response MAO004";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h1>CMS Response MAO004 Files</h1>
+    <form asp-action="CMSMAO004">
+        <p>
+            <label>File Path:</label>
+            <input asp-for="@Model.sourcePath" type="text" size="60" readonly="readonly" />
+        </p>
+        <table style="width:100%;border:1px solid">
+            @foreach (var item in Model.newFiles)
+            {
+                <tr>
+                    <td>@item</td>
+                </tr>
+            }
+        </table>
+        <p></p>
+        <p>
+            <label>Archive Path:</label>
+            <input asp-for="@Model.archivePath" type="text" size="60" readonly="readonly" />
+        </p>
+        <p>
+            <input type="submit" value="Process New Files" class="btn btn-primary" />
+        </p>
+        <label>Processed total files: @Model.totalFiles.ToString(), good files: @Model.goodFiles.ToString() </label>
+    </form>
+
+</div>
